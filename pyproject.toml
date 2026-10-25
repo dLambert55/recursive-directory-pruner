@@ -1,6 +1,6 @@
 [project]
 name = "recursive-directory-pruner"
-version = "0.1.0"
+version = "0.1.1"
 description = "Recursively deletes empty directories from the bottom up, with optional depth and path prefix limits."
 requires-python = ">=3.10"
 dependencies = []
