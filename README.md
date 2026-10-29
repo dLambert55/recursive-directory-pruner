@@ -47,3 +47,10 @@ nodes that is fine; for a filesystem-scale crawl you want something else.
 - Directories that cannot be removed (permission denied, content appeared
   between the walk and the `rmdir`) are reported in `result.protected` and
   treated as non-empty so their ancestors are kept.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
